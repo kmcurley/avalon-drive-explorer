@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avalon Document Library</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/config.js"></script>
+  <script defer src="js/drive-api.js"></script>
+  <script defer src="js/explorer.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">▣</span><span>Avalon Document Library</span></div>
+    <div class="search-wrap">
+      <input id="searchInput" type="search" placeholder="Search files and folders…" autocomplete="off">
+      <button id="searchButton" class="button primary">Search</button>
+      <button id="clearSearchButton" class="button" title="Clear search">Clear</button>
+    </div>
+  </header>
+
+  <main class="app">
+    <aside class="sidebar">
+      <div class="panel-heading">FOLDERS</div>
+      <div class="tree-toolbar">
+        <button id="refreshButton" class="button small">↻ Refresh</button>
+        <button id="expandButton" class="button small">Expand all</button>
+      </div>
+      <div id="folderTree" class="folder-tree" aria-label="Folder navigation">
+        <div class="loading">Connecting to Google Drive…</div>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div class="pathbar">
+        <div id="breadcrumbs" class="breadcrumbs"></div>
+        <div id="resultCount" class="result-count"></div>
+      </div>
+      <div id="status" class="status" role="status">Loading folder…</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th><button class="sort-button" data-sort="name">Name <span>↕</span></button></th>
+              <th><button class="sort-button" data-sort="mimeType">Type <span>↕</span></button></th>
+              <th><button class="sort-button" data-sort="size">Size <span>↕</span></button></th>
+              <th><button class="sort-button" data-sort="modifiedTime">Modified <span>↕</span></button></th>
+            </tr>
+          </thead>
+          <tbody id="fileRows">
+            <tr><td colspan="4" class="empty">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="pagination" class="pagination"></div>
+    </section>
+  </main>
+  <footer>Public document library · Files are hosted on Google Drive</footer>
+</body>
+</html>
