@@ -11,7 +11,7 @@
   const defaultFolderName = "Document Library";
 
   window.DRIVE_EXPLORER_CONFIG = {
-    API_KEY: "PASTE_YOUR_RESTRICTED_API_KEY_HERE",
+    API_KEY: "AIzaSyDXyata1Tk1ooowyLkcqpIPBU2076BFSxY",
     ROOT_FOLDER_ID: params.get("folder") || defaultFolderId,
     ROOT_FOLDER_NAME: params.get("name") || defaultFolderName,
     PAGE_SIZE: 100
